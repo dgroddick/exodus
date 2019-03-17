@@ -19,6 +19,17 @@ html {
 
 body {
 	margin: 0;
+	cursor: url('images/pointer.png'), auto;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	background-color: blue;
+	color: white;
+	cursor: url('images/hand.png'), auto;
 }
 
 /**
@@ -109,13 +120,11 @@ body {
 
 .alignleft {
     display: inline;
-    float: left;
     margin-right: 1.5em;
 }
 
 .alignright {
 	display: inline;
-	float: right;
 	margin-left: 1.5em;
 }
 
@@ -151,8 +160,7 @@ body {
 }
 
 #site-navigation ul {
-    padding: 0px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 #site-navigation li {
@@ -169,7 +177,8 @@ body {
 }
 
 #site-container h2 {
-    font-size: 2rem;
+	font-size: 2.5rem;
+	font-weight: bolder;
 }
 
 #site-container p {
