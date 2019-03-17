@@ -11,9 +11,124 @@ Description: A Brutal WordPress theme devoid of nonsense
 */
 html {
     width: 100%;
-    font-family: monospace;
+	font-family: monospace;
+	font-size: 1.5rem;
+    line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
 }
 
+body {
+	margin: 0;
+}
+
+/**
+ * Accessibility
+ */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/**
+ * WP classes
+ */
+.sticky {
+	display: block;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Theme specific
+ */
 #site-header {
     width: 80%;
     text-align: center;
@@ -21,10 +136,48 @@ html {
 }
 
 #site-header h1 {
-    font-size: 2.9em;
+    font-size: 5rem;
 }
 
 #site-container {
     width: 80%;
     margin: 0 auto;
+}
+
+#site-navigation {
+    text-align: center;
+    margin: 0 auto;
+    width: 350px;
+}
+
+#site-navigation ul {
+    padding: 0px;
+    font-size: 2rem;
+}
+
+#site-navigation li {
+    line-height: 3rem;
+}
+
+.main {
+    margin-top: 50px;
+}
+
+#site-footer {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+#site-container h2 {
+    font-size: 2rem;
+}
+
+#site-container p {
+    font-size: 1.5rem;
+    line-height: 1.3em;
+}
+
+#site-container li {
+	line-height: 1.5rem;
+	padding-bottom: 15px;
 }

@@ -6,10 +6,10 @@
  *
  */
 if ( !function_exists( 'exodus_setup' ) ):
-	
+
 	function exodus_setup() {
 		if ( ! isset( $content_width ) ) {
-			$content_width = 600;
+			$content_width = 640;
 		}
 
 		load_theme_textdomain( 'exodus', get_template_directory() . '/languages' );
@@ -23,7 +23,7 @@ if ( !function_exists( 'exodus_setup' ) ):
 			'main-menu' => esc_html__( 'Primary', 'exodus' ),
 		));
 
-		add_theme_support('custom-background', apply_filters( 'exodus_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'exodus_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		)));
@@ -37,6 +37,23 @@ if ( !function_exists( 'exodus_setup' ) ):
 	}
 endif;
 add_action( 'after_setup_theme', 'exodus_setup' );
+
+/**
+ * Register widget area.
+ *
+ */
+function exodus_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'exodus' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'exodus' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'exodus_widgets_init' );
 
 /**
  * Scripts and styles

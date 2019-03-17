@@ -9,11 +9,30 @@ get_header();
 
 <?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
-<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-<?php the_post_thumbnail( 'medium_large' ); ?>
-<?php the_content(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+    <?php the_post_thumbnail( 'medium_large' ); ?>
+    <?php the_content(); ?>
+
+    <?php
+    wp_link_pages( array(
+        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'exodus' ),
+        'after'  => '</div>',
+    ) );
+	?>
+
+    <?php
+        if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        endif;
+    ?>
+
+</article>
+
 <?php endwhile; else: ?>
-    <?php _e( 'Sorry, no posts matched your criteria.', 'exodis' ); ?>
+    <?php _e( 'Sorry, no posts matched your criteria.', 'exodus' ); ?>
 <?php endif; ?>
 
 <?php
