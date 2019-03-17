@@ -3,8 +3,28 @@ Theme Name: Exodus
 Theme URI: https://github.com/dgroddick/exodus-theme
 Author: David Roddick
 Author URI: https://www.davidroddick.com
-Description: A wordpress theme
 Version: 1.0.0
+Text Domain: exodus
 License: GNU General Public License v2 or later
 License URI: LICENSE
+Description: A Brutal WordPress theme devoid of nonsense
 */
+html {
+    width: 100%;
+    font-family: monospace;
+}
+
+#site-header {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#site-header h1 {
+    font-size: 2.9em;
+}
+
+#site-container {
+    width: 80%;
+    margin: 0 auto;
+}
