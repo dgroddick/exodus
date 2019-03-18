@@ -134,6 +134,11 @@ a:hover {
 	margin-right: auto;
 }
 
+.wp-block-gallery .blocks-gallery-item figure {
+    margin: 0;
+	height:15%;
+}
+
 /**
  * Theme specific
  */
