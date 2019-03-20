@@ -5,17 +5,13 @@
  * @package exodus
  */
 ?>
-</div><!-- site container -->
+<?php get_template_part( 'template-parts/footer', 'widgets' ); ?>
 
-<footer id="site-footer">
-  <div class="site-info">
-    <p>Theme Developed by: <a href="<?php echo esc_url( __( 'https://www.davidroddick.com', 'exodus' ) ); ?>" 
-                        title="<?php esc_attr_e( 'David Roddick', 'exodus' ); ?>"><strong>
-                        <?php printf( __( 'David Roddick %s', 'exodus' ),''); ?></strong></a><p>
-  </div>
-</footer>
-
+<p>Theme Developed by: 
+  <a href="<?php echo esc_url( __( 'https://www.davidroddick.com', 'exodus' ) ); ?>" 
+    title="<?php esc_attr_e( 'David Roddick', 'exodus' ); ?>"><strong>
+    <?php printf( __( 'David Roddick %s', 'exodus' ),''); ?></strong></a>
+<p>
 <?php wp_footer(); ?>
-
 </body>
 </html>
