@@ -13,6 +13,17 @@ get_header();
 
     <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
+    <?php
+    if ( 'post' === get_post_type() ) :
+    ?>
+    <div class="entry-meta">
+        <?php
+        exodus_posted_on();
+        exodus_posted_by();
+        ?>
+    </div><!-- .entry-meta -->
+    <?php endif; ?>
+
     <?php the_post_thumbnail( 'medium_large' ); ?>
     <?php the_content(); ?>
 

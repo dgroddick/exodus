@@ -16,20 +16,31 @@
 </head>
 <body <?php body_class(); ?>>
 
-  <h1 class="site-title">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-  </h1>
-  <?php
-    $exodus_description = get_bloginfo( 'description', 'display' );
-    if ( $exodus_description || is_customize_preview() ) :
-  ?>
-      <p class="site-description"><?php echo $exodus_description; /* WPCS: xss ok. */ ?></p>
-  <?php endif; ?>
+<div class="container">
 
-  <?php
-    wp_nav_menu( array(
-      'theme_location' => 'main-menu',
-      'menu_id'        => 'primary-menu',
-    ) );
-  ?>
+    <header>
+
+      <h1 class="site-title">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+      </h1>
+      <?php
+        $exodus_description = get_bloginfo( 'description', 'display' );
+        if ( $exodus_description || is_customize_preview() ) :
+      ?>
+          <p class="site-description"><?php echo $exodus_description; /* WPCS: xss ok. */ ?></p>
+      <?php endif; ?>
+    
+    </header>
+
+
+    <nav>
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'main-menu',
+          'menu_id'        => 'primary-menu',
+        ) );
+      ?>
+    </nav>
+
+    <main>
 
