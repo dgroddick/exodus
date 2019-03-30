@@ -890,7 +890,6 @@ object {
 /* Grid layout */
 .container {
     display: grid;
-    grid-template-rows: 1fr 5fr 1fr;
     grid-template-columns: 2fr 5fr 3fr;
     grid-template-areas: 
       "header header header"
@@ -931,7 +930,6 @@ footer {
 /* For tablet */ 
 @media(max-width: 768px) {
     .container {
-        grid-template-rows: 1fr 1fr 5fr 1fr;
         grid-template-columns: 2fr 5fr 3fr;
         grid-template-areas: 
             "header header header"
