@@ -365,8 +365,8 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #202121;
+	font-family: monospace;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -405,7 +405,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
@@ -455,7 +455,7 @@ ul, ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
 }
 
 ol {
@@ -575,32 +575,6 @@ select {
 
 textarea {
 	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
-}
-
-a:hover, a:focus, a:active {
-	color: midnightblue;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover, a:active {
-	outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -761,34 +735,7 @@ a:hover, a:active {
 	margin-right: auto;
 }
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
 
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
-}
 
 /*--------------------------------------------------------------
 # Widgets
@@ -843,20 +790,6 @@ a:hover, a:active {
 	display: block;
 }
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
 
 /*--------------------------------------------------------------
 # Media
@@ -967,23 +900,32 @@ object {
 }
 
 header {
-    grid-area: header;
+	grid-area: header;
+	text-align: center;
+	border: 1px solid #ccc;
 }
 
 nav {
-    grid-area: nav;
+	grid-area: nav;
+	background-color: #f4f4f4;
+	border: 1px solid #ccc;
 }
 
 main {
-    grid-area: main;
+	grid-area: main;
+	border: 1px solid #ccc;
 }
 
 aside {
-    grid-area: aside;
+	grid-area: aside;
+	background-color: #f4f4f4;
+	border: 1px solid #ccc;
 }
 
 footer {
-    grid-area: footer;
+	grid-area: footer;
+	background-color: #f4f4f4;
+	border: 1px solid #ccc;
 }
 
 /* For tablet */ 
@@ -1006,7 +948,21 @@ footer {
     }
 }
 
+.post-container {
+	border: 1px solid #ccc;
+}
 
-/**
- * Typography
- */
+/* custom typography */
+header h1 {
+	font-size: 5em;
+	font-family: monospace;
+}
+
+a {
+	color: #202121;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
