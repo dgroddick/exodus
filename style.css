@@ -958,8 +958,14 @@ header h1 {
 	font-family: monospace;
 }
 
-a {
+header h1 a {
+	font-family: monospace;
 	color: #202121;
+}
+
+a {
+	color: blue;
+	font-weight: bold;
 	text-decoration: none;
 }
 
