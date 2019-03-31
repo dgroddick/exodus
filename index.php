@@ -16,9 +16,13 @@ get_header();
 		<?php the_excerpt(); ?>
 	</div>
 
-	<?php endwhile; else: ?>
-		<?php _e( 'Sorry, nothing matched your criteria.', 'exodus' ); ?>
-	<?php endif; ?>
+	<?php 
+	endwhile;
 
-<?php
+		the_posts_navigation();
+
+	else:
+		esc_html_e( 'Sorry, nothing matched your criteria.', 'exodus' );
+	endif;
+
 get_footer();

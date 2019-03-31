@@ -1,7 +1,8 @@
-Exodus WordPress Theme
-======================
+Exodus 
+=======
 
-Exodus is a Brutal, no nonsense WordPress theme.
+Exodus is a WordPress theme that departs from 'normal' Web Design trends, with flashy, smooth and slick elements.
+Utilising Brutalist web design and CSS Grid. Exodus returns the Web to a simpler time.
 
 Some of the core theme code is borrowed from the awesome _s theme found at http://underscores.me/
 

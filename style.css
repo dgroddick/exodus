@@ -893,7 +893,8 @@ object {
     grid-template-columns: 2fr 5fr 3fr;
     grid-template-areas: 
       "header header header"
-      "nav main aside"
+	  "nav main main"
+	  "aside aside aside"
       "footer footer footer";
     grid-gap: .75em;
 }
@@ -912,6 +913,8 @@ nav {
 
 main {
 	grid-area: main;
+	padding-left: 5px;
+	padding-right: 5px;
 	border: 1px solid #ccc;
 }
 
@@ -943,7 +946,7 @@ footer {
 @media(max-width: 480px) {
     .container {
         display: block;
-    }
+	}
 }
 
 .post-container {

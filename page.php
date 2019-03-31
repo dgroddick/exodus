@@ -19,7 +19,7 @@ get_header();
 </div>
 
 <?php endwhile; else: ?>
-    <?php _e( 'Sorry, no pages matched your criteria.', 'exodus' ); ?>
+    <?php esc_html_e( 'Sorry, no pages matched your criteria.', 'exodus' ); ?>
 <?php endif; ?>
 
 <?php

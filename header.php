@@ -19,7 +19,7 @@
 <div class="container">
 
     <header>
-      
+
       <h1 class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
       </h1>
@@ -27,11 +27,10 @@
         $exodus_description = get_bloginfo( 'description', 'display' );
         if ( $exodus_description || is_customize_preview() ) :
       ?>
-          <p class="site-description"><?php echo $exodus_description; /* WPCS: xss ok. */ ?></p>
+          <p class="site-description"><?php echo esc_html( $exodus_description ); /* WPCS: xss ok. */ ?></p>
       <?php endif; ?>
     
     </header>
-
 
     <nav>
       <?php

@@ -43,7 +43,7 @@ get_header();
 </div> <!-- post -->
 
 <?php endwhile; else: ?>
-    <?php _e( 'Sorry, no posts matched your criteria.', 'exodus' ); ?>
+    <?php esc_html_e( 'Sorry, no posts matched your criteria.', 'exodus' ); ?>
 <?php endif; ?>
 
 <?php

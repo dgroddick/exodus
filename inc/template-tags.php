@@ -39,7 +39,7 @@ if ( ! function_exists( 'exodus_posted_by' ) ) :
 			esc_html_x( 'by %s', 'post author', 'exodus' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"> ' .  $byline . '</span>'; // WPCS: XSS OK.
 	}
 endif;
 if ( ! function_exists( 'exodus_entry_footer' ) ) :
@@ -105,7 +105,7 @@ if ( ! function_exists( 'exodus_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function _s_post_thumbnail() {
+	function exodus_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
