@@ -8,6 +8,8 @@ Utilising Brutalist web design and CSS Grid. Exodus returns the Web to a simpler
 
 Some of the core theme code is borrowed from the awesome _s theme found at http://underscores.me/
 
+![Exodus Theme](https://github.com/dgroddick/exodus/blob/master/screenshot.png)
+
 
 Still in early stages
 
