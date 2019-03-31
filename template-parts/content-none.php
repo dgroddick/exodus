@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Template part for displaying a message that posts cannot be found
@@ -6,7 +5,6 @@
  * @package exodus
  */
 ?>
-
 <section class="no-results not-found">
 	<div class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'exodus' ); ?></h1>

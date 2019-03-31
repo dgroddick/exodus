@@ -7,9 +7,7 @@
 ?>
     </main>
 
-    <aside>
-      <?php get_template_part( 'template-parts/footer', 'widgets' ); ?>
-    </aside>
+    <?php get_sidebar(); ?>
 
     <footer>
       <div class="site-info">
