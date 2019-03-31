@@ -1,6 +1,8 @@
 Exodus 
 =======
 
+[![Build Status](https://travis-ci.com/dgroddick/exodus-theme.svg?branch=master)](https://travis-ci.com/dgroddick/exodus-theme)
+
 Exodus is a WordPress theme that departs from 'normal' Web Design trends, with flashy, smooth and slick elements.
 Utilising Brutalist web design and CSS Grid. Exodus returns the Web to a simpler time.
 
