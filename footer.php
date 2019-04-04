@@ -23,7 +23,7 @@
           printf( esc_html__( 'Theme: %1$s by %2$s.', 'exodus' ), 'exodus', 
                               '<a href="https://davidroddick.com/">David Roddick</a>' );
           ?>
-      </div><!-- .site-info -->
+      </div>
 
       <?php wp_footer(); ?>
     </footer>

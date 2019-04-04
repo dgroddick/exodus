@@ -18,7 +18,7 @@
 
 <div class="container">
 
-    <header>
+    <header id="site-header">
 
       <h1 class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -27,19 +27,24 @@
         $exodus_description = get_bloginfo( 'description', 'display' );
         if ( $exodus_description || is_customize_preview() ) :
       ?>
-          <p class="site-description"><?php echo esc_html( $exodus_description ); /* WPCS: xss ok. */ ?></p>
+        <p class="site-description"><?php echo esc_html( $exodus_description ); /* WPCS: xss ok. */ ?></p>
+        
       <?php endif; ?>
     
     </header>
 
-    <nav>
+    <nav id="site-navigation">
+
+    <?php get_search_form(); ?>
+
       <?php
         wp_nav_menu( array(
           'theme_location' => 'main-menu',
           'menu_id'        => 'primary-menu',
         ) );
       ?>
+  
     </nav>
 
-    <main>
+    <main> <!-- start of main content section -->
 

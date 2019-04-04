@@ -5,24 +5,26 @@
  * @package exodus
  */
 get_header();
-?>
 
-	<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
+if ( have_posts() ) :
+	if ( is_home() && ! is_front_page() ) : ?>
+		<header>
+			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+		</header>
 
-	<div class="post-container">
-		<h2 id="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<?php
+	endif;
 
-		<?php the_post_thumbnail( 'thumbnail' ); ?>
-		<?php the_excerpt(); ?>
-	</div>
+	while ( have_posts() ) : the_post();
+		
+		get_template_part( 'template-parts/content', get_post_format() );
 
-	<?php 
 	endwhile;
 
-		the_posts_navigation();
-
-	else:
-		esc_html_e( 'Sorry, nothing matched your criteria.', 'exodus' );
-	endif;
+	the_posts_navigation();
+	
+else :
+	get_template_part( 'template-parts/content', 'none' );
+endif;
 
 get_footer();

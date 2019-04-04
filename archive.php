@@ -5,6 +5,7 @@
  * @package exodus
  */
 get_header();
+
 if ( have_posts() ) : ?>
 
     <div class="page-header">
@@ -12,7 +13,7 @@ if ( have_posts() ) : ?>
         the_archive_title( '<h1 class="page-title">', '</h1>' );
         the_archive_description( '<div class="archive-description">', '</div>' );
         ?>
-    </div><!-- .page-header -->
+    </div>
 
     <?php
     while ( have_posts() ) { the_post();

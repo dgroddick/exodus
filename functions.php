@@ -8,9 +8,6 @@
 if ( !function_exists( 'exodus_setup' ) ):
 
 	function exodus_setup() {
-		if ( ! isset( $content_width ) ) {
-			$content_width = 640;
-		}
 
 		load_theme_textdomain( 'exodus', get_template_directory() . '/languages' );
 
@@ -18,6 +15,18 @@ if ( !function_exists( 'exodus_setup' ) ):
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'custom-header' );
+
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
+
+		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'responsive-embeds' );
 
 		register_nav_menus(array(
 			'main-menu' => esc_html__( 'Primary', 'exodus' ),
@@ -34,9 +43,20 @@ if ( !function_exists( 'exodus_setup' ) ):
 			'flex-width' => true,
 			'flex-height' => true,
 		));
+
+		add_editor_style( get_stylesheet_uri() );
 	}
 endif;
 add_action( 'after_setup_theme', 'exodus_setup' );
+
+/**
+ * Theme content width
+ */
+function exodus_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'exodus_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'exodus_content_width', 0 );
+
 
 /**
  * Register widget area.
@@ -67,6 +87,7 @@ function exodus_load_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'exodus_load_scripts' );
+
 
 /**
  * Custom template tags for this theme.
