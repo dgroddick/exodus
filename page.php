@@ -2,7 +2,7 @@
 /**
  * The Page template
  *
- * @package exodus
+ * @package nidavellir
  */
 get_header();
 
@@ -14,7 +14,7 @@ if ( have_posts() ) {
     }
 }
 else {
-    esc_html_e( 'Sorry, no posts matched your criteria.', 'exodus' );
+    esc_html_e( 'Sorry, no posts matched your criteria.', 'nidavellir' );
 }
 
 

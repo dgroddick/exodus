@@ -2,7 +2,7 @@
 /**
  * The main theme template
  *
- * @package exodus
+ * @package nidavellir
  */
 get_header();
 

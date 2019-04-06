@@ -1,7 +1,6 @@
-=== Exodus ===
+=== Nidavellir ===
 
 Contributors: David Roddick
-Tags: two-column, footer-widgets, post-formats, translation-ready,accessibility-ready
 
 Requires at least: 4.5
 Tested up to: 5.1

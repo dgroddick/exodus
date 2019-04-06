@@ -2,14 +2,14 @@
 /**
  * Theme functions
  *
- * @package exodus
+ * @package nidavellir
  *
  */
-if ( !function_exists( 'exodus_setup' ) ):
+if ( !function_exists( 'nidavellir_setup' ) ):
 
-	function exodus_setup() {
+	function nidavellir_setup() {
 
-		load_theme_textdomain( 'exodus', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'nidavellir', get_template_directory() . '/languages' );
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -29,10 +29,10 @@ if ( !function_exists( 'exodus_setup' ) ):
 		add_theme_support( 'responsive-embeds' );
 
 		register_nav_menus(array(
-			'main-menu' => esc_html__( 'Primary', 'exodus' ),
+			'main-menu' => esc_html__( 'Primary', 'nidavellir' ),
 		));
 
-		add_theme_support( 'custom-background', apply_filters( 'exodus_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'nidavellir_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		)));
@@ -47,46 +47,46 @@ if ( !function_exists( 'exodus_setup' ) ):
 		add_editor_style( get_stylesheet_uri() );
 	}
 endif;
-add_action( 'after_setup_theme', 'exodus_setup' );
+add_action( 'after_setup_theme', 'nidavellir_setup' );
 
 /**
  * Theme content width
  */
-function exodus_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'exodus_content_width', 640 );
+function nidavellir_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'nidavellir_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'exodus_content_width', 0 );
+add_action( 'after_setup_theme', 'nidavellir_content_width', 0 );
 
 
 /**
  * Register widget area.
  *
  */
-function exodus_widgets_init() {
+function nidavellir_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'exodus' ),
+		'name'          => esc_html__( 'Sidebar', 'nidavellir' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'exodus' ),
+		'description'   => esc_html__( 'Add widgets here.', 'nidavellir' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'exodus_widgets_init' );
+add_action( 'widgets_init', 'nidavellir_widgets_init' );
 
 /**
  * Scripts and styles
  *
  */
-function exodus_load_scripts() {
-	wp_enqueue_style( 'exodus-style', get_stylesheet_uri() );
+function nidavellir_load_scripts() {
+	wp_enqueue_style( 'nidavellir-style', get_stylesheet_uri() );
 	
 	if (is_singular() && comments_open() && get_option( 'thread_comments' )) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'exodus_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'nidavellir_load_scripts' );
 
 
 /**

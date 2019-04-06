@@ -24,19 +24,17 @@
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
       </h1>
       <?php
-        $exodus_description = get_bloginfo( 'description', 'display' );
-        if ( $exodus_description || is_customize_preview() ) :
+        $nidavellir_description = get_bloginfo( 'description', 'display' );
+        if ( $nidavellir_description || is_customize_preview() ) :
       ?>
       
-      <p class="site-description"><?php echo esc_html( $exodus_description ); /* WPCS: xss ok. */ ?></p>
+      <p class="site-description"><?php echo esc_html( $nidavellir_description ); /* WPCS: xss ok. */ ?></p>
 
       <?php endif; ?>
     
     </header>
 
     <nav id="site-navigation">
-
-    <?php get_search_form(); ?>
 
       <?php
         wp_nav_menu( array(

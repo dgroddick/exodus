@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package exodus
+ * @package nidavellir
  */
 if ( post_password_required() ) {
 	return;
@@ -15,23 +15,23 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$exodus_comment_count = get_comments_number();
-			if ( '1' === $exodus_comment_count ) {
+			$nidavellir_comment_count = get_comments_number();
+			if ( '1' === $nidavellir_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'exodus' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'nidavellir' ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $exodus_comment_count, 'comments title', 'exodus' ) ),
-					esc_html( number_format_i18n( $exodus_comment_count ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $nidavellir_comment_count, 'comments title', 'nidavellir' ) ),
+					esc_html( number_format_i18n( $nidavellir_comment_count ) ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2>
 
 		<?php the_comments_navigation(); ?>
 
@@ -42,14 +42,14 @@ if ( post_password_required() ) {
 				'short_ping' => true,
 			) );
 			?>
-		</ol><!-- .comment-list -->
+		</ol>
 
 		<?php
 		the_comments_navigation();
 
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'exodus' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'nidavellir' ); ?></p>
 			<?php
 		endif;
 
@@ -58,4 +58,4 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
-</div><!-- #comments -->
+</div>

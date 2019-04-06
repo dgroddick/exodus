@@ -2,12 +2,12 @@
 /**
  * Displays the footer widget area
  *
- * @package exodus
+ * @package nidavellir
  */
 
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
-	<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'exodus' ); ?>">
+	<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'nidavellir' ); ?>">
 	
 		<?php
 		if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
@@ -18,7 +18,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
 		<?php endif; ?>
 
-	</aside><!-- .widget-area -->
+	</aside>
 
 
 <?php endif; ?>

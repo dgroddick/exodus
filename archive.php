@@ -2,7 +2,7 @@
 /**
  * Archive page template
  *
- * @package exodus
+ * @package nidavellir
  */
 get_header();
 

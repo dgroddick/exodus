@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @package exodus
+ * @package nidavellir
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,8 +19,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				exodus_posted_on();
-				exodus_posted_by();
+				nidavellir_posted_on();
+				nidavellir_posted_by();
 				?>
 			</div>
 		<?php endif; ?>
@@ -32,7 +32,7 @@
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'exodus' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'nidavellir' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -42,7 +42,7 @@
 			get_the_title()
 		) );
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'exodus' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nidavellir' ),
 			'after'  => '</div>',
 		) );
 		?>
