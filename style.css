@@ -8,8 +8,8 @@ Text Domain: nidavellir
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Description: A Brutalist WordPress
+Tags: two-columns, featured-images, threaded-comments, translation-ready
 */
-
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -533,6 +533,25 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container {
