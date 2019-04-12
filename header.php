@@ -2,7 +2,7 @@
 /**
  * Theme header
  *
- * @package exodus
+ * @package nidavellir
  *
  */
 ?>
@@ -18,20 +18,12 @@
 
 <div class="container">
 
-    <header id="site-header">
+    <header id="masthead" class="site-header">
 
-      <h1 class="site-title">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-      </h1>
-      <?php
-        $nidavellir_description = get_bloginfo( 'description', 'display' );
-        if ( $nidavellir_description || is_customize_preview() ) :
-      ?>
-      
-      <p class="site-description"><?php echo esc_html( $nidavellir_description ); /* WPCS: xss ok. */ ?></p>
+      <div class="site-branding-container">
+			  <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+			</div><!-- .layout-wrap -->
 
-      <?php endif; ?>
-    
     </header>
 
     <nav id="site-navigation">
@@ -42,7 +34,7 @@
           'menu_id'        => 'primary-menu',
         ) );
       ?>
-  
+
     </nav>
 
     <main> <!-- start of main content section -->

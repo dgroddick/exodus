@@ -5,28 +5,32 @@
  * @package nidavellir
  */
 
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
+
+add_action( 'customize_register', 'nidavellir_customize_register' );
 function nidavellir_customize_register( $wp_customize ) {
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title a',
-			'render_callback' => 'nidavellir_customize_partial_blogname',
-		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'        => '.site-description',
-			'render_callback' => 'exodus_customize_partial_blogdescription',
-		) );
+		$wp_customize->selective_refresh->add_partial(
+			'blogname',
+			array(
+				'selector'        => '.site-title a',
+				'render_callback' => 'nidavellir_customize_partial_blogname',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'blogdescription',
+			array(
+				'selector'        => '.site-description',
+				'render_callback' => 'nidavellir_customize_partial_blogdescription',
+			)
+		);
 	}
+
 }
-add_action( 'customize_register', 'nidavellir_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
@@ -45,10 +49,11 @@ function nidavellir_customize_partial_blogname() {
 function nidavellir_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
+
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * Bind JS handlers to instantly live-preview changes.
  */
 function nidavellir_customize_preview_js() {
-	wp_enqueue_script( 'nidavellir-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'nidavellir-customize-preview', get_theme_file_uri( '/js/customize.js' ), array( 'customize-preview' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'nidavellir_customize_preview_js' );

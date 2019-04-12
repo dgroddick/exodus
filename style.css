@@ -8,7 +8,7 @@ Text Domain: nidavellir
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Description: A Brutalist WordPress theme
-Tags: two-columns, featured-images, threaded-comments, translation-ready
+Tags: two-columns, featured-images, threaded-comments, translation-ready, custom-logo
 */
 html {
 	line-height: 1.15;
@@ -17,6 +17,7 @@ html {
 
 body {
 	margin: 0;
+	background-color: #FFF;
 }
 
 h1 {
