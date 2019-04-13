@@ -3,7 +3,6 @@
  * Displays header site branding
  *
  * @subpackage nidavellir
- * @since 1.0.0
  */
 ?>
 <div class="site-branding">
