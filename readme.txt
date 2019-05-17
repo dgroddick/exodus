@@ -4,11 +4,16 @@ Contributors: David Roddick
 
 Requires at least: 4.5
 Tested up to: 5.1
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
 A Brutalist WordPress theme
+
+== Copyright ==
+
+Nidavellir WordPress Theme, Copyright 2019 David Roddick
+Nidavellir is distributed under the terms of the GNU GPL
 
 == Description ==
 

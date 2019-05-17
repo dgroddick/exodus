@@ -11,11 +11,11 @@
         <div class="site-logo"><?php the_custom_logo(); ?></div>
       <?php endif; ?>
 
-      <?php $blog_info = get_bloginfo( 'name' ); ?>
+      <?php $nidavellir_blog_info = get_bloginfo( 'name' ); ?>
 
-      <?php if ( ! empty( $blog_info ) ) : ?>
+      <?php if ( ! empty( $nidavellir_blog_info ) ) : ?>
 
-          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( $nidavellir_blog_info ); ?></a></h1>
 
       <?php endif; ?>
 
