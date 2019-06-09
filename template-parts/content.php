@@ -5,12 +5,11 @@
  * @package nidavellir
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="post-header">
+<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="post-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h2 class="entry-title">', '</h2>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -24,11 +23,12 @@
 				?>
 			</div>
 		<?php endif; ?>
-	</div>
-
-
+	</header><!-- post-header -->
 	<div class="post-content">
 		<?php
+		if ( the_post_thumbnail() )  {
+			the_post_thumbnail();
+		}
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
@@ -46,6 +46,5 @@
 			'after'  => '</div>',
 		) );
 		?>
-	</div>
-
-</article>
+	</div><!-- post-content -->
+</section>

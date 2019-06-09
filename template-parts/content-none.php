@@ -7,7 +7,7 @@
 ?>
 <section class="no-results not-found">
 	<div class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'nidavellir' ); ?></h1>
+		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'nidavellir' ); ?></h2>
 	</div>
 
 	<div class="page-content">

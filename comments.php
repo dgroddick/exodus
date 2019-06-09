@@ -8,12 +8,11 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="comments" class="comments-area">
-
+<section id="comments" class="comments-area">
 	<?php
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			$nidavellir_comment_count = get_comments_number();
 			if ( '1' === $nidavellir_comment_count ) {
@@ -31,15 +30,16 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2>
+		</h3>
 
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
+			wp_list_comments( 
+				array(
+					'style'      => 'ol',
+					'short_ping' => true,
 			) );
 			?>
 		</ol>
@@ -57,5 +57,4 @@ if ( post_password_required() ) {
 
 	comment_form();
 	?>
-
-</div>
+</section>
