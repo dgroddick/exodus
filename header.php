@@ -17,6 +17,7 @@
 <body <?php body_class(); ?>>
 
 <div class="container">
+  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_nidavellir' ); ?></a>
 
     <header id="masthead" class="site-header">
 
@@ -37,5 +38,5 @@
 
     </nav>
 
-    <main> <!-- start of main content section -->
+    <main id="content"> <!-- start of main content section -->
 
