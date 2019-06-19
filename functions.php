@@ -32,11 +32,6 @@ if ( !function_exists( 'nidavellir_setup' ) ):
 			'main-menu' => esc_html__( 'Primary', 'nidavellir' ),
 		));
 
-		add_theme_support( 'custom-background', apply_filters( 'nidavellir_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		)));
-
 		add_theme_support( 'custom-logo', array(
 			'height' => 250,
 			'width' => 250,
