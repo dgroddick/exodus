@@ -9,7 +9,7 @@
 
   <?php get_sidebar(); ?>
 
-  <footer id="site-footer">
+  <footer id="site-footer" role="contentinfo">
     <div class="site-info">
       <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nidavellir' ) ); ?>">
       <?php

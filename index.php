@@ -6,7 +6,7 @@
  */
 get_header();
 ?>
-<article>
+<article role="article">
 <?php
 if ( have_posts() ) :
 	if ( is_home() && ! is_front_page() ) : ?>

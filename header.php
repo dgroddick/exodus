@@ -18,11 +18,11 @@
   <div id="container">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nidavellir' ); ?></a>
 
-    <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header" role="banner">
         <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
     </header>
 
-    <nav id="site-navigation">
+    <nav id="site-navigation" role="navigation">
       <?php
       wp_nav_menu( array(
         'theme_location' => 'main-menu',
@@ -31,4 +31,4 @@
       ?>
     </nav>
 
-    <main id="content"> <!-- start of main content section -->
+    <main id="content" role="main"> <!-- start of main content section -->

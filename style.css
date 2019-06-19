@@ -8,7 +8,13 @@ Text Domain: nidavellir
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Description: A Brutalist WordPress theme
-Tags: two-columns, featured-images, threaded-comments, translation-ready, custom-logo, accessibility-ready
+Tags: two-columns, featured-images, threaded-comments, translation-ready, custom-logo
+
+Nidavellir is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer https://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 html {
 	line-height: 1.15; /* 1 */
@@ -353,7 +359,7 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: monospace;
-	font-size: 16px;
+	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.5;
 }
