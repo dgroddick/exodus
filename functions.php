@@ -15,6 +15,7 @@ if ( !function_exists( 'nidavellir_setup' ) ):
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'custom-header' );
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_theme_support( 'html5', array(
 			'search-form',
@@ -76,7 +77,7 @@ add_action( 'widgets_init', 'nidavellir_widgets_init' );
  */
 function nidavellir_load_scripts() {
 	wp_enqueue_style( 'nidavellir-style', get_stylesheet_uri() );
-	
+
 	if (is_singular() && comments_open() && get_option( 'thread_comments' )) {
 		wp_enqueue_script( 'comment-reply' );
 	}
