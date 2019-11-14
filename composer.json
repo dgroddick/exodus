@@ -8,33 +8,19 @@
         "email": "dgroddick@gmail.com"
     }
 	],
-	"config": {
-		"platform": {
-		  "php": "7.0"
-		}
-	},
-  "require": {},
+  "require": {
+    "composer/installers": "^1.7"
+  },
   "require-dev": {
-    "php": ">=7.0",
-		"wp-coding-standards/wpcs": "^2",
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.4",
-		"phpunit/phpunit": "^6",
-		"brain/monkey": "^2",
-		"phpcompatibility/php-compatibility": "^9"
-	},
-	"scripts": {
-		"install-codestandards": [
-		  "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-		],
-		"phpcbf-dev": "\"vendor/bin/phpcbf\"",
-		"run-phpcbf": [
-		  "@phpcbf-dev"
-		],
-		"phpcs-dev": "\"vendor/bin/phpcs\"",
-		"run-phpcs": [
-		  "@phpcs-dev"
-		],
-		"phpunit-dev": "\"vendor/bin/phpunit\"",
-		"phpunit-integration-dev": "\"vendor/bin/phpunit\" -c \"phpunit.integration.xml.dist\""
-	  }
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "automattic/vipwpcs": "^2.0",
+    "xwp/wp-dev-lib": "^1.3",
+    "wptrt/wpthemereview": "^0.2.0",
+    "phpstan/phpstan-shim": "^0.11.12",
+    "szepeviktor/phpstan-wordpress": "^0.2.0"
+  },
+  "scripts": {
+  },
+  "extra": {
+  }
 }
