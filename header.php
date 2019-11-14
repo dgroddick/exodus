@@ -21,7 +21,7 @@
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nidavellir' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
-        <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 		</header>
 
     <nav id="site-navigation" role="navigation">

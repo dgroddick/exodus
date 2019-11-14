@@ -5,7 +5,6 @@
  * @package nidavellir
  */
 
-
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */

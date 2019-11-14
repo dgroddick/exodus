@@ -1,9 +1,10 @@
 <?php
 /**
  *  404 template (not found)
- * 
+ *
  * @package nidavellir
  */
+
 get_header();
 ?>
 <section class="error-404 not-found">

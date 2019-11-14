@@ -4,6 +4,7 @@
  *
  * @package nidavellir
  */
+
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="page-header">
@@ -11,15 +12,17 @@
 	</header>
 
 	<div class="page-content">
-	<?php 
-		if ( the_post_thumbnail() )  {
-			the_post_thumbnail();
-		}
-		the_content();
-		wp_link_pages( array(
+	<?php
+	if ( the_post_thumbnail() ) {
+		the_post_thumbnail();
+	}
+	the_content();
+	wp_link_pages(
+		array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nidavellir' ),
 			'after'  => '</div>',
-		) );
-		?>
+		)
+	);
+	?>
 	</div>
 </section>
