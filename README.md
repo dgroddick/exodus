@@ -8,6 +8,23 @@ Utilising Brutalist web design and CSS Grid. Nidavellir returns the Web to a sim
 
 ![Nidavellir Theme](https://github.com/dgroddick/nidavellir/blob/master/screenshot.png)
 
+Building
+---------
+
+If you intend on downloading this development version of Nidavellir, you should probably think of preparing the theme before uploading it to your WordPress site. The Makefile prepares all the files of the theme without all the development assets, like composer packages and git files, into a zip archive suitable for uploading to a WordPress installation.
+
+This assumes you're building this on either Linux or MacOSX with bash and posix tools.
+
+Simply run:
+
+$ make build
+
+To build the final package, or
+
+$ make clean
+
+To clean up after yourself.
+
 
 Installation
 -------------
