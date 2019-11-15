@@ -1,18 +1,18 @@
 === Nidavellir ===
 Contributors: dgroddick
 Requires at least: 4.5
-Tested up to: 5.1
-Stable tag: 1.0.3
+Tested up to: 5.3
+Stable tag: 1.0.4
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, featured-images, threaded-comments, translation-ready, custom-logo
+Tags: two-columns, featured-images, threaded-comments, translation-ready, custom-logo, custom-header
 
 A Brutalist WordPress theme
 
 == Description ==
 
-This is a WordPress theme built using CSS Grid and Brutalist web design 
+This is a WordPress theme built using CSS Grid and Brutalist web design
 
 == Installation ==
 
@@ -24,6 +24,7 @@ This is a WordPress theme built using CSS Grid and Brutalist web design
 
 This theme, like WordPress, is licensed under the GPL.
 Nidavellir is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+and TwentyNineteen https://github.com/WordPress/twentynineteen
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer https://meyerweb.com/eric/tools/css/reset/
