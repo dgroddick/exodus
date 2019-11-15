@@ -889,7 +889,7 @@ a {
 /*
  * Left layout
  */
- .layout-left {
+.layout-left {
     display: grid;
     grid-template-columns: 2fr 5fr 3fr;
     grid-template-areas:
@@ -938,19 +938,33 @@ a {
 
 #masthead {
 	grid-area: header;
+	text-align: center;
+	position: relative;
 }
 
-#masthead h1 {
-    font-size:4vw;
-}
 
-#masthead a {
+#masthead a, p{
     text-decoration: none;
-    color: black;
+    color: #000;
+}
+
+.site-title {
+	font-size:4vw;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.site-title a:hover {
+	background: #FFFF00;
 }
 
 .site-description {
-	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #site-navigation {
