@@ -116,15 +116,6 @@ function nidavellir_customize_register( $wp_customize ) {
 			)
 		)
 	);
-	// Add image filter setting and control.
-	$wp_customize->add_setting(
-		'image_filter',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'refresh',
-		)
-	);
 }
 add_action( 'customize_register', 'nidavellir_customize_register' );
 
