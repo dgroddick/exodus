@@ -68,6 +68,15 @@ if ( ! function_exists( 'nidavellir_setup' ) ) :
 			)
 		);
 
+		$args = array(
+			'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
+			'default-text-color' => '000',
+			'width'              => 1000,
+			'height'             => 250,
+			'flex-width'         => true,
+			'flex-height'        => true,
+		);
+		add_theme_support( 'custom-header', $args );
 
 		add_editor_style( get_stylesheet_uri() );
 	}
@@ -112,19 +121,6 @@ function nidavellir_load_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'nidavellir_load_scripts' );
-
-function nidavellir_custom_header_setup() {
-    $args = array(
-        'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
-        'default-text-color' => '000',
-        'width'              => 1000,
-        'height'             => 250,
-        'flex-width'         => true,
-        'flex-height'        => true,
-	);
-	add_theme_support( 'custom-header', $args );
-}
-add_action( 'after_setup_theme', 'nidavellir_custom_header_setup' );
 
 /**
  * Display custom color CSS in customizer and on frontend.

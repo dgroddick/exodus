@@ -49,6 +49,7 @@ function nidavellir_customize_register( $wp_customize ) {
 		array(
 			'default'   => 'layout-center',
 			'transport' => 'refresh',
+			'sanitize_callback' => 'esc_attr',
 		)
 	);
 
