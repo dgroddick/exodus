@@ -31,6 +31,22 @@
 			<div id="site-header-image">
 				<img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 			</div>
+			<style type="text/css">
+			.site-title {
+				font-size:4vw;
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.site-description {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			</style>
 			<?php endif; ?>
 
 			<?php if ( is_front_page() && is_home() ) : ?>

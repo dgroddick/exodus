@@ -122,28 +122,6 @@ function nidavellir_load_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'nidavellir_load_scripts' );
 
-/**
- * Display custom color CSS in customizer and on frontend.
- */
-function nidavellir_colors_css_wrap() {
-	// Only include custom colors in customizer or frontend.
-	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'primary_color', 'default' ) ) || is_admin() ) {
-		return;
-	}
-	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
-	$primary_color = 199;
-	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
-		$primary_color = get_theme_mod( 'primary_color_hue', 199 );
-	}
-	?>
-
-	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
-		<?php echo nidavellir_custom_colors_css(); ?>
-	</style>
-	<?php
-}
-add_action( 'wp_head', 'nidavellir_colors_css_wrap' );
-
 
 /**
  * Custom template tags for this theme.
