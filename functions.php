@@ -122,6 +122,23 @@ function nidavellir_load_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'nidavellir_load_scripts' );
 
+/**
+ * Custom colours
+ */
+function nidavellir_custom_palettes($palettes) {
+	$palettes = array(
+	  '#000000',
+	  '#FFFFFF',
+	  '#F1C40F',
+	  '#666A86',
+	  '#C5AFA4',
+	  '#CC7E85',
+	  '#CF4D6F',
+	  '#8FA998'
+	);
+	return $palettes;
+}
+
 
 /**
  * Custom template tags for this theme.

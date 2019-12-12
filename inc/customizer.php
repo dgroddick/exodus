@@ -70,6 +70,19 @@ function nidavellir_customize_register( $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_setting( 'nidavellir_hover_color' , array(
+		'default'   => '#FFFF00',
+		'transport' => 'refresh',
+      	'sanitize_callback' => 'sanitize_hex_color'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nidavellir_hover_color', array(
+		'label'      => __( 'Link Hover Color', 'nidavellir' ),
+		'section'    => 'colors',
+		'settings'   => 'nidavellir_hover_color',
+	) ) );
+
 }
 add_action( 'customize_register', 'nidavellir_customize_register' );
 
@@ -77,10 +90,8 @@ add_action( 'customize_register', 'nidavellir_customize_register' );
  * Hook for the layout
  */
 function nidavellir_layout_settings() {
-
 	$layout = get_theme_mod( 'nidavellir_layout', 'layout-center' );
 	return $layout;
-
 }
 add_filter( 'nidavellir_change_layout', 'nidavellir_layout_settings' );
 
@@ -103,7 +114,6 @@ function nidavellir_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
-
 /**
  * Load dynamic logic for the customizer controls area.
  */
@@ -112,20 +122,13 @@ function nidavellir_customize_controls_js() {
 }
 add_action( 'customize_preview_init', 'nidavellir_customize_controls_js' );
 
+
 /**
- * Sanitize custom color choice.
- *
- * @param string $choice Whether image filter is active.
- *
- * @return string
+ * Link hover colors
  */
-function nidavellir_sanitize_color_option( $choice ) {
-	$valid = array(
-		'default',
-		'custom',
-	);
-	if ( in_array( $choice, $valid, true ) ) {
-		return $choice;
-	}
-	return 'default';
-}
+function nidavellir_hover_color() { ?>
+<style type="text/css">
+	a:hover { background: <?php echo get_theme_mod( 'nidavellir_hover_color', '#FFFF00' ); ?>; }
+</style>
+<?php }
+add_action( 'wp_head', 'nidavellir_hover_color' );
