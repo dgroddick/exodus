@@ -71,7 +71,7 @@ if ( ! function_exists( 'nidavellir_setup' ) ) :
 		$args = array(
 			'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
 			'default-text-color' => '000',
-			'width'              => 1000,
+			'width'              => 1200,
 			'height'             => 250,
 			'flex-width'         => true,
 			'flex-height'        => true,
@@ -121,24 +121,6 @@ function nidavellir_load_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'nidavellir_load_scripts' );
-
-/**
- * Custom colours
- */
-function nidavellir_custom_palettes($palettes) {
-	$palettes = array(
-	  '#000000',
-	  '#FFFFFF',
-	  '#F1C40F',
-	  '#666A86',
-	  '#C5AFA4',
-	  '#CC7E85',
-	  '#CF4D6F',
-	  '#8FA998'
-	);
-	return $palettes;
-}
-
 
 /**
  * Custom template tags for this theme.

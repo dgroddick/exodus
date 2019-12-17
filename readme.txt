@@ -1,9 +1,9 @@
 === Nidavellir ===
 Contributors: dgroddick
-Requires at least: 4.5
-Tested up to: 5.3
+Requires at least: 4.9
+Tested up to: 5.3.1
 Stable tag: 1.0.4
-Requires PHP: 7.0
+Requires PHP: 7.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, featured-images, threaded-comments, translation-ready, custom-logo, custom-header
@@ -19,6 +19,13 @@ This is a WordPress theme built using CSS Grid and Brutalist web design
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+== Changelog ==
+
+= 1.0.4 =
+* Added customizer settings for link hover, page layout and custom header
+* Fixed alignfull and alignwide styles to display correctly in the container
+
 
 == Copyright ==
 

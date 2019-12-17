@@ -12,25 +12,9 @@
  */
 function nidavellir_customize_register( $wp_customize ) {
 
-	$wp_customize->get_setting( 'blogname' )->transport        = 'refresh';
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'refresh';
+	$wp_customize->get_setting('blogname')->transport='refresh';
+	$wp_customize->get_setting('blogdescription')->transport='refresh';
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial(
-			'blogname',
-			array(
-				'selector'        => '.site-title a',
-				'render_callback' => 'nidavellir_customize_partial_blogname',
-			)
-		);
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription',
-			array(
-				'selector'        => '.site-description',
-				'render_callback' => 'nidavellir_customize_partial_blogdescription',
-			)
-		);
-	}
 
 	/**
 	 * Settings for changing the page layout
@@ -71,8 +55,28 @@ function nidavellir_customize_register( $wp_customize ) {
 		)
 	);
 
+	/**
+	 * Header text color
+	 */
+	$wp_customize->add_setting( 'nidavellir_header_textcolor' , array(
+		'default'   => '#000000',
+		'type' 		=> 'theme_mod',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nidavellir_header_textcolor', array(
+		'label'      => __( 'Header Text Color', 'nidavellir' ),
+		'section'    => 'colors',
+		'settings'   => 'nidavellir_header_textcolor',
+	) ) );
+
+	/**
+	 * Link hover color
+	 */
 	$wp_customize->add_setting( 'nidavellir_hover_color' , array(
 		'default'   => '#FFFF00',
+		'type' 		=> 'theme_mod',
 		'transport' => 'refresh',
       	'sanitize_callback' => 'sanitize_hex_color'
 	) );
@@ -113,22 +117,3 @@ function nidavellir_customize_partial_blogname() {
 function nidavellir_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
-
-/**
- * Load dynamic logic for the customizer controls area.
- */
-function nidavellir_customize_controls_js() {
-	wp_enqueue_script( 'nidavellir-customizer', get_theme_file_uri( '/js/customizer.js' ), array( 'customize-controls' ), '1.0', true );
-}
-add_action( 'customize_preview_init', 'nidavellir_customize_controls_js' );
-
-
-/**
- * Link hover colors
- */
-function nidavellir_hover_color() { ?>
-<style type="text/css">
-	a:hover { background: <?php echo get_theme_mod( 'nidavellir_hover_color', '#FFFF00' ); ?>; }
-</style>
-<?php }
-add_action( 'wp_head', 'nidavellir_hover_color' );
