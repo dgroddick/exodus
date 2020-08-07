@@ -14,10 +14,11 @@
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <?php wp_head(); ?>
   <style type="text/css">
-	a:hover { background: <?php echo get_theme_mod( 'nidavellir_hover_color', '#FFFF00' ); ?>; }
+	a:hover { background: <?php echo esc_html( get_theme_mod( 'nidavellir_hover_color', '#FFFF00' ) ); ?>; }
 </style>
 </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 
 	<div id="container" class="<?php echo apply_filters( 'nidavellir_change_layout', 'layout-left' ); ?>">
 
@@ -53,14 +54,14 @@
 			<?php endif; ?>
 			
 			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: <?php echo get_theme_mod( 'nidavellir_header_textcolor', '#000000' ); ?>;"><?php bloginfo( 'name' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: <?php echo esc_html( get_theme_mod( 'nidavellir_header_textcolor', '#000000' ) ); ?>;"><?php bloginfo( 'name' ); ?></a>
 			</h1>
 
 			<?php
 				$nidavellir_description = get_bloginfo( 'description', 'display' );
 				if ( $nidavellir_description || is_customize_preview() ) :
 					?>
-					<p class="site-description" style="color: <?php echo get_theme_mod( 'nidavellir_header_textcolor', '#000000' ); ?>;"><?php echo $nidavellir_description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description" style="color: <?php echo esc_html( get_theme_mod( 'nidavellir_header_textcolor', '#000000' ) ); ?>;"><?php echo $nidavellir_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 
 			
