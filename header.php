@@ -24,7 +24,6 @@
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nidavellir' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
-
 		<div class="site-branding">
 
 			<?php if ( get_header_image() ) : ?>
@@ -52,19 +51,19 @@
 			}
 			</style>
 			<?php endif; ?>
-				<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: <?php echo get_theme_mod( 'nidavellir_header_textcolor', '#000000' ); ?>;"><?php bloginfo( 'name' ); ?></a>
-				</h1>
+			
+			<h1 class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: <?php echo get_theme_mod( 'nidavellir_header_textcolor', '#000000' ); ?>;"><?php bloginfo( 'name' ); ?></a>
+			</h1>
+
 			<?php
 				$nidavellir_description = get_bloginfo( 'description', 'display' );
 				if ( $nidavellir_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo $nidavellir_description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description" style="color: <?php echo get_theme_mod( 'nidavellir_header_textcolor', '#000000' ); ?>;"><?php echo $nidavellir_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 
-			<?php if ( has_custom_logo() ) : ?>
-				<div class="site-logo"><?php the_custom_logo(); ?></div>
-			<?php endif; ?>
+			
 
 		</div> <!-- site-branding -->
 	</header>
@@ -73,7 +72,6 @@
       <?php
       wp_nav_menu( array(
         'theme_location' => 'main-menu',
-        'menu_id'        => 'primary-menu',
       ) );
       ?>
     </nav>

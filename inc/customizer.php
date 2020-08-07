@@ -12,13 +12,11 @@
  */
 function nidavellir_customize_register( $wp_customize ) {
 
-	$wp_customize->get_setting('blogname')->transport='refresh';
-	$wp_customize->get_setting('blogdescription')->transport='refresh';
+	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	
+	$wp_customize->remove_control( 'header_textcolor' );
 
-
-	/**
-	 * Settings for changing the page layout
-	 */
 	$wp_customize->add_section(
 		'layout',
 		array(
@@ -55,13 +53,10 @@ function nidavellir_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * Header text color
-	 */
 	$wp_customize->add_setting( 'nidavellir_header_textcolor' , array(
 		'default'   => '#000000',
 		'type' 		=> 'theme_mod',
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -71,13 +66,10 @@ function nidavellir_customize_register( $wp_customize ) {
 		'settings'   => 'nidavellir_header_textcolor',
 	) ) );
 
-	/**
-	 * Link hover color
-	 */
 	$wp_customize->add_setting( 'nidavellir_hover_color' , array(
 		'default'   => '#FFFF00',
 		'type' 		=> 'theme_mod',
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
       	'sanitize_callback' => 'sanitize_hex_color'
 	) );
 
@@ -90,30 +82,21 @@ function nidavellir_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'nidavellir_customize_register' );
 
-/**
- * Hook for the layout
- */
 function nidavellir_layout_settings() {
 	$layout = get_theme_mod( 'nidavellir_layout', 'layout-center' );
 	return $layout;
 }
 add_filter( 'nidavellir_change_layout', 'nidavellir_layout_settings' );
 
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
 function nidavellir_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
 function nidavellir_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
+
+function nidavellir_customize_preview_js() {
+	wp_enqueue_script( 'nidavellir-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), 0, true );
+}
+add_action( 'customize_preview_init', 'nidavellir_customize_preview_js' );

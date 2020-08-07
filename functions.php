@@ -36,22 +36,6 @@ if ( ! function_exists( 'nidavellir_setup' ) ) :
 			)
 		);
 
-		register_nav_menus(
-			array(
-				'main-menu' => esc_html__( 'Primary', 'nidavellir' ),
-			)
-		);
-
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-
 		add_theme_support(
 			'editor-color-palette',
 			array(
@@ -68,33 +52,39 @@ if ( ! function_exists( 'nidavellir_setup' ) ) :
 			)
 		);
 
-		$args = array(
-			'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
-			'default-text-color' => '000',
-			'width'              => 1200,
-			'height'             => 250,
-			'flex-width'         => true,
-			'flex-height'        => true,
+		$header_info = array(
+			'width'         => 1200,
+			'height'        => 350,
+			'default-image' => get_template_directory_uri() . '/images/default.jpg',
 		);
-		add_theme_support( 'custom-header', $args );
+		add_theme_support( 'custom-header', $header_info );
+		 
+		$header_images = array(
+			'default' => array(
+				'url'           => get_template_directory_uri() . '/images/default.jpg',
+				'thumbnail_url' => get_template_directory_uri() . '/images/default.jpg',
+				'description'   => 'Default',
+			),
+		);
+		register_default_headers( $header_images );
+
+		register_nav_menus(
+			array(
+				'main-menu' => esc_html__( 'Primary', 'nidavellir' ),
+			)
+		);
 
 		add_editor_style( get_stylesheet_uri() );
 	}
 endif;
 add_action( 'after_setup_theme', 'nidavellir_setup' );
 
-/**
- * Theme content width
- */
+
 function nidavellir_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'nidavellir_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'nidavellir_content_width', 0 );
 
-
-/**
- * Register widget area.
- */
 function nidavellir_widgets_init() {
 	register_sidebar(
 		array(
@@ -110,9 +100,6 @@ function nidavellir_widgets_init() {
 }
 add_action( 'widgets_init', 'nidavellir_widgets_init' );
 
-/**
- * Scripts and styles
- */
 function nidavellir_load_scripts() {
 	wp_enqueue_style( 'nidavellir-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
@@ -122,17 +109,6 @@ function nidavellir_load_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'nidavellir_load_scripts' );
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
